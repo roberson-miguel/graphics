@@ -15,3 +15,12 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+// AMD
+window.ApexCharts = require("apexcharts") // expose to window
+
+// or
+// ES6
+import ApexCharts from 'apexcharts'
+window.ApexCharts = ApexCharts

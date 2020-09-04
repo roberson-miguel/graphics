@@ -1,0 +1,38 @@
+<h1>Dashboard</h1>
+<p>Visão geral do progresso dos Blox na instituição</p>
+<br />
+<br />
+
+<div style="display: inline-block; width: 30%;">
+  <%= donut_chart([
+    {name: "Quantitativo", data: 300},
+    {name: "Básico", data:15},
+    {name: "Complementar", data: 80},
+    {name: "Técnico", data: 125}
+
+  ],theme: 'palette4', title: {text: "Blox por Área de Competência", align: 'center' }, legend: {horizontalAlign: 'center', position: "top"}, data_labels: false) %>
+</div>
+
+<div style="display: inline-block; width: 30%;">
+  <%= donut_chart([
+    {name: "Quantitativo", data: 25},
+    {name: "Basico", data: 100},
+    {name: "Complementar", data: 200},
+    {name: "Técnico", data: 125}
+  ], theme: 'palette4', title: {text:"Blox por Área de Funcional", align: 'center' }, legend: "top") %>
+</div>
+
+<div style="display: inline-block; width: 30%;">
+  <%= donut_chart([
+    {name: "Quantitativo", data: 25},
+    {name: "Basico", data: 100},
+    {name: "Complementar", data: 200},
+    {name: "Técnico", data: 125}
+  ], theme: 'palette4', title: {text: "Blox por Perfil", align: 'center' }, legend: "top") %>
+</div>
+
+
+
+<div style="display: inline-block; width: 48%;">
+ <!-- #Grafico de baixo -->
+</div>
