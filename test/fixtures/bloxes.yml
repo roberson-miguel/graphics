@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  knowledge_area: MyString
+  functional_area: MyString
+  box_profile: MyString
+  cycle: 1
+  shift: 1
+
+two:
+  title: MyString
+  knowledge_area: MyString
+  functional_area: MyString
+  box_profile: MyString
+  cycle: 1
+  shift: 1

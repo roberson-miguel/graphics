@@ -5,3 +5,44 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+#20.times do
+#  Blox.create(title: "Administração", knowledge_area:"", functional_area:"", 
+#              box_profile:"", cycle:%i[1.Ciclo 2.Ciclo].sample, 
+#              shift:%i[Diurno Matutino].sample)
+#end 
+
+
+              Blox.create(title: "Administração", knowledge_area:"", functional_area:"", 
+              box_profile:"", cycle: "2.Ciclo", 
+              shift: "Diurno")
+
+              Blox.create(title: "Contabilidade", knowledge_area:"", functional_area:"", 
+              box_profile:"", cycle: "2.Ciclo", 
+              shift: "Diurno")
+
+              Blox.create(title: "Administração", knowledge_area:"", functional_area:"", 
+              box_profile:"", cycle: "1.Ciclo", 
+              shift: "Diurno")
+
+              Blox.create(title: "Finanças", knowledge_area:"", functional_area:"", 
+              box_profile:"", cycle: "2.Ciclo", 
+              shift: "Diurno")
+
+              Blox.create(title: "Engenharia", knowledge_area:"", functional_area:"", 
+              box_profile:"", cycle: "2.Ciclo", 
+              shift: "Diurno")
+
+              Blox.create(title: "Engenharia", knowledge_area:"", functional_area:"", 
+              box_profile:"", cycle: "1.Ciclo", 
+              shift: "Diurno")
+
+              Blox.create(title: "Informática", knowledge_area:"", functional_area:"", 
+              box_profile:"", cycle: "2.Ciclo", 
+              shift: "Diurno")
+
+              Blox.create(title: "Informática", knowledge_area:"", functional_area:"", 
+              box_profile:"", cycle: "1.Ciclo", 
+              shift: "Diurno")
+     

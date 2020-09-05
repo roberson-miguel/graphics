@@ -31,8 +31,59 @@
   ], theme: 'palette4', title: {text: "Blox por Perfil", align: 'center' }, legend: "top") %>
 </div>
 
+<% range_bar_series = [{
+      name: "Matutino",
+      data: {
+        'Administração' => [485],
+        'Finanças' => [390],
+        'Contabilidade' => [625],
+        'Informática' => [350],
+        'Banco de dados' => [485],
+        'Filosofia' => [390],
+        'Geografia' => [625],
+        'Direito' => [485],
+        'Pedagogia' => [325],
+        'Emfermagem' => [225],
+        'Pedagogia' => [125],
+        'Engenharia Civil' => [374],
+        'Educação Física' => [278],
+        'Arquitetura e Urbanismo' => [625],
+        'Hotelaria' => [350]
+      }
+    }, {
+      name: "Diurno",
+      data: {
+        'Administração' => [600],
+        'Finanças' => [150],
+        'Contabilidade' => [80],
+        'Informática' => [175],
+        'Banco de dados' => [485],
+        'Filosofias' => [390],
+        'Geografia' => [625],
+        'Direito' => [485],
+        'Pedagogia' => [625],
+        'Emfermagem' => [625],
+        'Pedagogia' => [625],
+        'Engenharia Civil' => [625],
+        'Educação Física' => [625],
+        'Arquitetura e Urbanismo' => [625],
+        'Hotelaria' => [350]
+      }
+  }]
+%>
+
+<% options = {
+  #title: 'Quantidade de blox por: ',
+  #subtitle: 'Período',
+  #xtitle: 'Disciplina',
+  #ytitle: 'Bloxes',
+  stacked: true
+} %>
 
 
 <div style="display: inline-block; width: 48%;">
- <!-- #Grafico de baixo -->
+
+
+<%= column_chart(range_bar_series, {**options, theme: 'palette7', title: {text: "Quantidade de blox por:", align: 'left'}, width: 1500 }) %>
+
 </div>
