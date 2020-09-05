@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 #Charts with apexcharts.js
 gem 'apexcharts'
 gem 'groupdate'
-gem "chartkick"
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

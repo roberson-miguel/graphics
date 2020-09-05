@@ -77,6 +77,8 @@
   #subtitle: 'Período',
   #xtitle: 'Disciplina',
   #ytitle: 'Bloxes',
+  width: 1200,
+  theme: 'palette8',
   stacked: true
 } %>
 
@@ -84,6 +86,13 @@
 <div style="display: inline-block; width: 48%;">
 
 
-<%= column_chart(range_bar_series, {**options, theme: 'palette7', title: {text: "Quantidade de blox por:", align: 'left'}, width: 1500 }) %>
+<p> Quantidade de blox por: 
+                          <%= select_tag(:city_id, 
+                          raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
+                          %>
+</p>
+
+<%= column_chart(range_bar_series, {**options, }) %>
+
 
 </div>
