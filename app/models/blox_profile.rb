@@ -1,0 +1,2 @@
+class BloxProfile < ApplicationRecord
+end

@@ -2,11 +2,11 @@ class CreateCourses < ActiveRecord::Migration[6.0]
   def change
     create_table :courses do |t|
       t.string :title
-      t.integer :knowledge_area_id
-      t.integer :functional_area_id
-      t.integer :blox_profile_id
-      t.integer :cycle_id
-      t.integer :shift_id
+      t.references :knowledge_area, index: true
+      t.references :functional_area, index: true
+      t.references :blox_profile, index: true
+      t.references :cycle, index: true
+      t.references :shift, index: true
 
       t.timestamps
     end
