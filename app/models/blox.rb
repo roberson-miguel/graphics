@@ -1,3 +1,4 @@
 class Blox < ApplicationRecord
+  
 
 end

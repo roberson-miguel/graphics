@@ -8,10 +8,16 @@
 
 
 #20.times do
-#  Blox.create(title: "Administração", knowledge_area:"", functional_area:"", 
-#              box_profile:"", cycle:%i[1.Ciclo 2.Ciclo].sample, 
-#              shift:%i[Diurno Matutino].sample)
+#  Blox.create(title: "Administração", knowledge_area_id:"", functional_area_id:"", 
+#              box_profile:"", cycle_id:%i[1.Ciclo 2.Ciclo].sample, 
+#              shift_id:%i[Diurno Matutino].sample)
 #end 
+
+Cycle.destroy_all
+Blox.destroy_all
+Shift.destroy_all
+Course.destroy_all
+
 
 cycle_list =  15.times.map { rand(1..2) }
 blox_list = 15.times.map { rand(1..4) }
@@ -20,30 +26,35 @@ func_list = 15.times.map { rand(1..4) }
 shift_list = 15.times.map { rand (1..2) }
 
 
-Cycle.create(name: "1.Ciclo")
-Cycle.create(name: "2.Ciclo")
+cycle1 = Cycle.create(name: "1.Ciclo")
+cycle2 = Cycle.create(name: "2.Ciclo")
 
-Blox.create(name: "Técnico") 
-Blox.create(name: "Quantitativo") 
-Blox.create(name: "Complementar") 
-Blox.create(name: "Básico") 
+blox1 = Blox.create(name: "Técnico") 
+blox2 = Blox.create(name: "Quantitativo") 
+blox3 = Blox.create(name: "Complementar") 
+blox4 = Blox.create(name: "Básico") 
 
-Shift.create(name: "Matutino") 
-Shift.create(name: "Diurno") 
+shift1 = Shift.create(name: "Matutino") 
+shift2 = Shift.create(name: "Diurno") 
 
-Course.create(title: "Administração", cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample) 
-Course.create(title: "Finanças", cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Contabilidade', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Informática', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Banco de dados', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Filosofia', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Geografia', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Direito', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Pedagogia', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Emfermagem', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Pedagogia', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Engenharia Civil', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Educação Física', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Arquitetura e Urbanismo', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
-Course.create(title: 'Hotelaria', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: "Administração", cycle_id: cycle_list.sample,  blox_profile_id: blox1, knowledge_area_id: blox1 , functional_area_id: blox1, shift_id: shift1) 
+Course.create(title: "Finanças", cycle_id: cycle_list.sample,  blox_profile_id: blox2, knowledge_area_id: blox2 , functional_area_id: blox2, shift_id: shift1)  
+Course.create(title: 'Contabilidade', cycle_id: cycle_list.sample,  blox_profile_id: blox3, knowledge_area_id: blox3 , functional_area_id: blox3, shift_id: shift2)  
+Course.create(title: 'Informática', cycle_id: cycle_list.sample,  blox_profile_id: blox4, knowledge_area_id: blox4 , functional_area_id: blox4, shift_id: shift2)  
+
+#Course.create(title: "Administração", cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample) 
+#Course.create(title: "Finanças", cycle_id: cycle_list.sample,  blox_profile_id: bloxlist.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Contabilidade', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Informática', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Banco de dados', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Filosofia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Geografia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Direito', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Pedagogia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Emfermagem', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Pedagogia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Engenharia Civil', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Educação Física', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Arquitetura e Urbanismo', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
+#Course.create(title: 'Hotelaria', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_id_list.sample)  
 

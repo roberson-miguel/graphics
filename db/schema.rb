@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 2020_09_07_104121) do
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
-    t.integer "knowledge_area"
-    t.integer "functional_area"
-    t.integer "box_profile"
-    t.integer "cycle"
-    t.integer "shift"
+    t.integer "knowledge_area_id"
+    t.integer "functional_area_id"
+    t.integer "blox_profile_id"
+    t.integer "cycle_id"
+    t.integer "shift_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
