@@ -19,11 +19,11 @@ Shift.destroy_all
 Course.destroy_all
 
 
-cycle_list =  15.times.map { rand(1..2) }
-blox_list = 15.times.map { rand(1..4) }
-know_list = 15.times.map { rand(1..4) }
-func_list = 15.times.map { rand(1..4) }
-shift_list = 15.times.map { rand (1..2) }
+cycle_list =  100.times.map { rand(1..2) }
+blox_list = 200.times.map { rand(1..4) }
+know_list = 100.times.map { rand(1..4) }
+func_list = 100.times.map { rand(1..4) }
+shift_list = 200.times.map { rand (1..2) }
 
 
 cycle1 = Cycle.create(name: "1.Ciclo")
@@ -37,24 +37,62 @@ blox4 = Blox.create(name: "Básico")
 shift1 = Shift.create(name: "Matutino") 
 shift2 = Shift.create(name: "Diurno") 
 
-#Course.create(title: "Administração", cycle_id: cycle_list.sample,  blox_profile_id: blox1, knowledge_area_id: blox1 , functional_area_id: blox1, shift_id: shift1) 
-#Course.create(title: "Finanças", cycle_id: cycle_list.sample,  blox_profile_id: blox2, knowledge_area_id: blox2 , functional_area_id: blox2, shift_id: shift1)  
-#Course.create(title: 'Contabilidade', cycle_id: cycle_list.sample,  blox_profile_id: blox3, knowledge_area_id: blox3 , functional_area_id: blox3, shift_id: shift2)  
-#Course.create(title: 'Informática', cycle_id: cycle_list.sample,  blox_profile_id: blox4, knowledge_area_id: blox4 , functional_area_id: blox4, shift_id: shift2)  
-
+20.times do
 Course.create(title: "Administração", cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample) 
-Course.create(title: "Finanças", cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Contabilidade', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Informática', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Banco de dados', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Filosofia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Geografia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Direito', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Pedagogia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Emfermagem', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Pedagogia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Engenharia Civil', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Educação Física', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Arquitetura e Urbanismo', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
-Course.create(title: 'Hotelaria', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end 
 
+42.times do
+Course.create(title: "Finanças", cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end 
+
+11.times do
+Course.create(title: 'Contabilidade', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end
+
+29.times do
+Course.create(title: 'Informática', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end
+
+33.times do
+Course.create(title: 'Banco de dados', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end
+
+17.times do
+Course.create(title: 'Filosofia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end
+
+26.times do
+Course.create(title: 'Geografia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end
+
+41.times do
+Course.create(title: 'Direito', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end
+
+47.times do
+Course.create(title: 'Pedagogia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end
+
+6.times do
+Course.create(title: 'Enfermagem', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end 
+
+8.times do
+Course.create(title: 'Pedagogia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end
+
+33.times do
+Course.create(title: 'Engenharia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end
+
+25.times do
+Course.create(title: 'Educação Física', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end
+
+13.times do
+Course.create(title: 'Arquitetura', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end 
+
+15.times do
+Course.create(title: 'Hotelaria', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
+end

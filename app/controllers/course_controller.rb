@@ -5,6 +5,8 @@ class CourseController < ApplicationController
     @bloxes = Blox.all
     @cycles = Cycle.all
     @shifts = Shift.all
+  
+  
   end
 
   def show

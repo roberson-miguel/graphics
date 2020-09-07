@@ -31,7 +31,68 @@
   ], theme: 'palette4', title: {text: "Blox por Perfil", align: 'center' }, legend: "top") %>
 </div>
 
-<% range_bar_series = [{
+<% range_bar_objeto = [{
+      name: "Matutino",
+      data:  { 
+        "Administração" => ["#{@administracao.count}"],
+        'Finanças' => ["#{@financas.count}"],
+        'Contabilidade' => ["#{@contabilidade.count}"],
+        'Informática' => ["#{@informatica.count}"],
+        'Banco de dados' => ["#{@bancodedados.count}"],
+        'Filosofia' => ["#{@filosofia.count}"],
+        'Geografia' => ["#{@geografia.count}"],
+        'Direito' => ["#{@direito.count}"],
+        'Pedagogia' => ["#{@pedagogia.count}"],
+        'Enfermagem' => ["#{@enfermagem.count}"],
+        'Engenharia' => ["#{@engenharia.count}"],
+        'Educação Física' => ["#{@educacaofisica.count}"],
+        'Arquitetura' => ["#{@arquitetura.count}"],
+        'Hotelaria' => ["#{@hotelaria.count}"]
+      }
+    }, {
+      name: "Diurno",
+      data: {
+        'Administração' =>  [9] ,
+        'Finanças' => [4],
+        'Contabilidade' => [8],
+        'Informática' => [5],
+        'Banco de dados' => [4],
+        'Filosofias' => [3],
+        'Geografia' => [6],
+        'Direito' => [4],
+        'Pedagogia' => [2],
+        'Emfermagem' => [5],
+        'Pedagogia' => [5],
+        'Engenharia Civil' => [6],
+        'Educação Física' => [6],
+        'Arquitetura e Urbanismo' => [6],
+        'Hotelaria' => [3]
+      }
+  }]
+%>
+
+<% options = {
+  #title: 'Quantidade de blox por: ',
+  #subtitle: 'Período',
+  #xtitle: 'Curso',
+  #ytitle: 'Blox',
+  width: 1200,
+  theme: 'palette8',
+  stacked: true
+} %>
+
+<br>
+<div style="display: inline-block; width: 48%;">
+<p> Quantidade de blox por: 
+                          <%= select_tag(:cycle_id, 
+                          raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
+                          %>
+</p>
+<%= column_chart(range_bar_objeto, {**options, }) %>
+</div>
+
+<%# Trecho do Grafico um com dados mocados manualmente %>
+<%# <% range_bar_series = [{
       name: "Matutino",
       data: {
         'Administração' => [485],
@@ -72,7 +133,7 @@
   }]
 %>
 
-<% options = {
+<%# <% options = {
   #title: 'Quantidade de blox por: ',
   #subtitle: 'Período',
   #xtitle: 'Curso',
@@ -80,20 +141,14 @@
   width: 1200,
   theme: 'palette8',
   stacked: true
-} %>
-
+} 
 
 <div style="display: inline-block; width: 48%;">
-
-
 <p> Quantidade de blox por: 
                           <%= select_tag(:cycle_id, 
                           raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
                           %>
-</p>
-
+<%# </p>
 <%= column_chart(range_bar_series, {**options, }) %>
-
-
-</div>
+<%# </div> %>
 
