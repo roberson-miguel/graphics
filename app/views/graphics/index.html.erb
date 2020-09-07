@@ -5,29 +5,29 @@
 
 <div style="display: inline-block; width: 30%;">
   <%= donut_chart([
-    {name: "Quantitativo", data: 300},
-    {name: "Básico", data:15},
-    {name: "Complementar", data: 80},
-    {name: "Técnico", data: 125}
+    {name: "Quantitativo", data: @func_quantitativo},
+    {name: "Básico", data: @func_basico},
+    {name: "Complementar", data: @func_complementar},
+    {name: "Técnico", data: @func_tecnico}
 
   ],theme: 'palette4', title: {text: "Blox por Área de Competência", align: 'center' }, legend: {horizontalAlign: 'center', position: "top"}, data_labels: false) %>
 </div>
 
 <div style="display: inline-block; width: 30%;">
   <%= donut_chart([
-    {name: "Quantitativo", data: 25},
-    {name: "Basico", data: 100},
-    {name: "Complementar", data: 200},
-    {name: "Técnico", data: 125}
+    {name: "Quantitativo", data: @know_quantitativo},
+    {name: "Basico", data: @know_basico},
+    {name: "Complementar", data: @know_complementar},
+    {name: "Técnico", data: @know_tecnico}
   ], theme: 'palette4', title: {text:"Blox por Área de Funcional", align: 'center' }, legend: "top") %>
 </div>
 
 <div style="display: inline-block; width: 30%;">
   <%= donut_chart([
-    {name: "Quantitativo", data: 25},
-    {name: "Basico", data: 100},
-    {name: "Complementar", data: 200},
-    {name: "Técnico", data: 125}
+    {name: "Quantitativo", data: @prof_quantitativo},
+    {name: "Basico", data: @prof_basico},
+    {name: "Complementar", data: @prof_complementar},
+    {name: "Técnico", data: @prof_tecnico}
   ], theme: 'palette4', title: {text: "Blox por Perfil", align: 'center' }, legend: "top") %>
 </div>
 
@@ -72,15 +72,14 @@
 
 <% options = {
   #title: 'Quantidade de blox por: ',
-  #subtitle: 'Período',
-  #xtitle: 'Curso',
-  #ytitle: 'Blox',
+  #subtitle: 'Curso',
+  xtitle: 'Periodo',
+  ytitle: 'Blox',
   width: 1200,
   theme: 'palette8',
   stacked: true
 } %>
 
-<br>
 <div style="display: inline-block; width: 48%;">
 <p> Quantidade de blox por: 
                           <%= select_tag(:cycle_id, 
