@@ -4,45 +4,40 @@
 
   <h5>Coursos</h5>
   
-  <% if @courses.empty? %>
-    <p> Não existem Ciclos cadastrados</p>
-  <% else %>
-      <table class="table-striped table-hover" > <br />
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Titulo:</th>
-            <th>Area de Conhecimento:</th>
-            <th>Area de Funcional:</th>
-            <th>Perfil:</th>
-            <th>Ciclo:</th>
-            <th>Periodo:</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-      
-        <tbody>
-          <% @courses.each do |course| %>
-            <% @cycles.each do |cycle|%>
-              <% @bloxes.each do |blox|%>
-              <% @shifts.each do |shift|%>
-                  <tr>
-                    <td><%= course.id %></td>
-                    <td><%= course.title %></td>
-                    <td><%= blox.name %></td>
-                    <td><%= blox.name %></td>
-                    <td><%= blox.name %></td>
-                    <td><%= cycle.name %></td>
-                    <td><%= shift.name %></td>
-                    <th colspan="3"></th>
-                  </tr>
-                <% end %>
-              <% end %>
-            <% end %>
-          <% end %>
-        </tbody>
-      </table>
-  <% end %>
+    <% if @courses.empty? %>
+      <p> Não existem Ciclos cadastrados</p>
+    <% else %>
+        <table class="table-striped table-hover" > <br />
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Titulo:</th>
+                  <th>Area de Conhecimento:</th>
+                  <th>Area de Funcional:</th>
+                  <th>Perfil:</th>
+                  <th>Ciclo:</th>
+                  <th>Periodo:</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+        
+              <tbody>
+                    <% @courses.each do |course| %>
+                        <tr>
+                          <td><%= course.id %></td>
+                          <td><%= course.title %></td>
+                          <td><%= course.knowledge_area_id %></td>
+                          <td><%= course.functional_area_id  %></td>
+                          <td><%= course.blox_profile_id  %></td>
+                          <td><%= course.cycle_id  %></td>                        
+                          <td><%= course.shift_id %></td>                        
+                          <th colspan="3"></th>
+                        </tr>
+                      <% end %>    
+                </tbody>
+          </table>
+      <% end %>
+
  
 </div>
 
