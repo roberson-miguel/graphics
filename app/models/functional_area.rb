@@ -1,2 +1,0 @@
-class FunctionalArea < ApplicationRecord
-end

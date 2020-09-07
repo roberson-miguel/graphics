@@ -1,0 +1,34 @@
+
+
+<div class="container" align="center"> <br />
+
+  <h5>Bloxes</h5>
+  
+  <% if @bloxes.empty? %>
+    <p> Não existem Bloxes cadastrados</p>
+  <% else %>
+      <table class="table-striped table-hover" > <br />
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome:</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @bloxes.each do |blox| %>
+            <tr>
+              <td><%= blox.id %></td>
+              <td><%= blox.name %></td>
+             
+              <th colspan="3"></th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  <% end %>
+ 
+</div>
+
+

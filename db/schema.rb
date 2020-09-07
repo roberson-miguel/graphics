@@ -10,49 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_07_085948) do
+ActiveRecord::Schema.define(version: 2020_09_07_104121) do
 
-  create_table "blox_profiles", force: :cascade do |t|
+  create_table "bloxes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "bloxes", force: :cascade do |t|
+  create_table "courses", force: :cascade do |t|
     t.string "title"
-    t.integer "knowledge_area_id", null: false
-    t.integer "functional_area_id", null: false
-    t.integer "box_profile_id", null: false
-    t.integer "cycle_id", null: false
-    t.integer "shift_id", null: false
+    t.integer "knowledge_area"
+    t.integer "functional_area"
+    t.integer "box_profile"
+    t.integer "cycle"
+    t.integer "shift"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["box_profile_id"], name: "index_bloxes_on_box_profile_id"
-    t.index ["cycle_id"], name: "index_bloxes_on_cycle_id"
-    t.index ["functional_area_id"], name: "index_bloxes_on_functional_area_id"
-    t.index ["knowledge_area_id"], name: "index_bloxes_on_knowledge_area_id"
-    t.index ["shift_id"], name: "index_bloxes_on_shift_id"
   end
 
   create_table "cycles", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "functional_areas", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "knowledge_areas", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "knowledge_ares", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -64,9 +41,4 @@ ActiveRecord::Schema.define(version: 2020_09_07_085948) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "bloxes", "box_profiles"
-  add_foreign_key "bloxes", "cycles"
-  add_foreign_key "bloxes", "functional_areas"
-  add_foreign_key "bloxes", "knowledge_areas"
-  add_foreign_key "bloxes", "shifts"
 end

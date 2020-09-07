@@ -1,0 +1,34 @@
+
+
+<div class="container" align="center"> <br />
+
+  <h5>Ciclos</h5>
+  
+  <% if @cycles.empty? %>
+    <p> Não existem Cursos cadastrados</p>
+  <% else %>
+      <table class="table-striped table-hover" > <br />
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome:</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @cycles.each do |cycle| %>
+            <tr>
+              <td><%= cycle.id %></td>
+              <td><%= cycle.name %></td>
+             
+              <th colspan="3"></th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  <% end %>
+ 
+</div>
+
+

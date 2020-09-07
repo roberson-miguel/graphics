@@ -1,2 +1,0 @@
-class BloxProfile < ApplicationRecord
-end

@@ -1,0 +1,34 @@
+
+
+<div class="container" align="center"> <br />
+
+  <h5>Periodos</h5>
+  
+  <% if @shifts.empty? %>
+    <p> Não existem Periodos cadastrados</p>
+  <% else %>
+      <table class="table-striped table-hover" > <br />
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome:</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @shifts.each do |shift| %>
+            <tr>
+              <td><%= shift.id %></td>
+              <td><%= shift.name %></td>
+             
+              <th colspan="3"></th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  <% end %>
+ 
+</div>
+
+

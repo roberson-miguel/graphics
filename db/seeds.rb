@@ -13,36 +13,37 @@
 #              shift:%i[Diurno Matutino].sample)
 #end 
 
+cycle_list =  15.times.map { rand(1..2) }
+blox_list = 15.times.map { rand(1..4) }
+know_list = 15.times.map { rand(1..4) }
+func_list = 15.times.map { rand(1..4) }
+shift_list = 15.times.map { rand (1..2) }
 
-              Blox.create(title: "Administração", knowledge_area:"", functional_area:"", 
-              box_profile:"", cycle: "2.Ciclo", 
-              shift: "Diurno")
 
-              Blox.create(title: "Contabilidade", knowledge_area:"", functional_area:"", 
-              box_profile:"", cycle: "2.Ciclo", 
-              shift: "Diurno")
+Cycle.create(name: "1.Ciclo")
+Cycle.create(name: "2.Ciclo")
 
-              Blox.create(title: "Administração", knowledge_area:"", functional_area:"", 
-              box_profile:"", cycle: "1.Ciclo", 
-              shift: "Diurno")
+Blox.create(name: "Técnico") 
+Blox.create(name: "Quantitativo") 
+Blox.create(name: "Complementar") 
+Blox.create(name: "Básico") 
 
-              Blox.create(title: "Finanças", knowledge_area:"", functional_area:"", 
-              box_profile:"", cycle: "2.Ciclo", 
-              shift: "Diurno")
+Shift.create(name: "Matutino") 
+Shift.create(name: "Diurno") 
 
-              Blox.create(title: "Engenharia", knowledge_area:"", functional_area:"", 
-              box_profile:"", cycle: "2.Ciclo", 
-              shift: "Diurno")
+Course.create(title: "Administração", cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample) 
+Course.create(title: "Finanças", cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Contabilidade', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Informática', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Banco de dados', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Filosofia', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Geografia', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Direito', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Pedagogia', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Emfermagem', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Pedagogia', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Engenharia Civil', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Educação Física', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Arquitetura e Urbanismo', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
+Course.create(title: 'Hotelaria', cycle: cycle_list.sample,  box_profile: cycle_list.sample, knowledge_area: know_list.sample , functional_area: func_list.sample, shift: shift_list.sample)  
 
-              Blox.create(title: "Engenharia", knowledge_area:"", functional_area:"", 
-              box_profile:"", cycle: "1.Ciclo", 
-              shift: "Diurno")
-
-              Blox.create(title: "Informática", knowledge_area:"", functional_area:"", 
-              box_profile:"", cycle: "2.Ciclo", 
-              shift: "Diurno")
-
-              Blox.create(title: "Informática", knowledge_area:"", functional_area:"", 
-              box_profile:"", cycle: "1.Ciclo", 
-              shift: "Diurno")
-     

@@ -1,2 +1,0 @@
-class BloxProfileController < ApplicationController
-end

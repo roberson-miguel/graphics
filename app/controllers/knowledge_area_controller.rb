@@ -1,2 +1,0 @@
-class KnowledgeAreaController < ApplicationController
-end
