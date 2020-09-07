@@ -1,4 +1,7 @@
 class Blox < ApplicationRecord
-  enum shift: %i[Diurno Matutino]
-  enum cycle: %i[1.Ciclo 2.Ciclo]
+  belongs_to :knowledge_area
+  belongs_to :functional_area
+  belongs_to :box_profile
+  belongs_to :cycle
+  belongs_to :shift
 end

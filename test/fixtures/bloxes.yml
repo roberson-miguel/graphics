@@ -2,16 +2,16 @@
 
 one:
   title: MyString
-  knowledge_area: MyString
-  functional_area: MyString
-  box_profile: MyString
-  cycle: 1
-  shift: 1
+  knowledge_area: one
+  functional_area: one
+  box_profile: one
+  cycle: one
+  shift: one
 
 two:
   title: MyString
-  knowledge_area: MyString
-  functional_area: MyString
-  box_profile: MyString
-  cycle: 1
-  shift: 1
+  knowledge_area: two
+  functional_area: two
+  box_profile: two
+  cycle: two
+  shift: two

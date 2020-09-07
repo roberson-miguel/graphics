@@ -1,0 +1,2 @@
+class FunctionalAreaController < ApplicationController
+end

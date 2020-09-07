@@ -1,0 +1,2 @@
+module FunctionalAreaHelper
+end
