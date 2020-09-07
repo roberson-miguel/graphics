@@ -73,11 +73,11 @@ end
 Course.create(title: 'Pedagogia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
 end
 
-6.times do
+31.times do
 Course.create(title: 'Enfermagem', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
 end 
 
-8.times do
+28.times do
 Course.create(title: 'Pedagogia', cycle_id: cycle_list.sample,  blox_profile_id: blox_list.sample, knowledge_area_id: know_list.sample , functional_area_id: func_list.sample, shift_id: shift_list.sample)  
 end
 

@@ -31,7 +31,7 @@
   ], theme: 'palette4', title: {text: "Blox por Perfil", align: 'center' }, legend: "top") %>
 </div>
 
-<% range_bar_objeto = [{
+<% range_bar_ciclo1 = [{
       name: "Matutino",
       data:  { 
         "Administração" => ["#{@administracao1.count}"],
@@ -70,7 +70,7 @@
   }]
 %>
 
-<% options = {
+<% options1 = {
   #title: 'Quantidade de blox por: ',
   #subtitle: 'Curso',
   xtitle: 'Periodo',
@@ -81,12 +81,72 @@
 } %>
 
 <div style="display: inline-block; width: 48%;">
-<p> Quantidade de blox por: 
+<p> Quantidade de blox no 1.CICLO: 
                           <%= select_tag(:cycle_id, 
                           raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
                           %>
 </p>
-<%= column_chart(range_bar_objeto, {**options, }) %>
+<%= column_chart(range_bar_ciclo1, {**options1, }) %>
+</div>
+
+<br>
+
+<% range_bar_ciclo2 = [{
+      name: "Matutino",
+      data:  { 
+        "Administração" => ["#{@administracao3.count}"],
+        'Finanças' => ["#{@financas3.count}"],
+        'Contabilidade' => ["#{@contabilidade3.count}"],
+        'Informática' => ["#{@informatica3.count}"],
+        'Banco de dados' => ["#{@bancodedados3.count}"],
+        'Filosofia' => ["#{@filosofia3.count}"],
+        'Geografia' => ["#{@geografia3.count}"],
+        'Direito' => ["#{@direito3.count}"],
+        'Pedagogia' => ["#{@pedagogia3.count}"],
+        'Enfermagem' => ["#{@enfermagem3.count}"],
+        'Engenharia' => ["#{@engenharia3.count}"],
+        'Educação Física' => ["#{@educacaofisica3.count}"],
+        'Arquitetura' => ["#{@arquitetura3.count}"],
+        'Hotelaria' => ["#{@hotelaria3.count}"]
+      }
+    }, {
+      name: "Diurno",
+      data: {
+        "Administração" => ["#{@administracao4.count}"],
+        'Finanças' => ["#{@financas4.count}"],
+        'Contabilidade' => ["#{@contabilidade4.count}"],
+        'Informática' => ["#{@informatica4.count}"],
+        'Banco de dados' => ["#{@bancodedados4.count}"],
+        'Filosofia' => ["#{@filosofia4.count}"],
+        'Geografia' => ["#{@geografia4.count}"],
+        'Direito' => ["#{@direito4.count}"],
+        'Pedagogia' => ["#{@pedagogia4.count}"],
+        'Enfermagem' => ["#{@enfermagem4.count}"],
+        'Engenharia' => ["#{@engenharia4.count}"],
+        'Educação Física' => ["#{@educacaofisica4.count}"],
+        'Arquitetura' => ["#{@arquitetura4.count}"],
+        'Hotelaria' => ["#{@hotelaria4.count}"]
+      }
+  }]
+%>
+
+<% options2 = {
+  #title: 'Quantidade de blox por: ',
+  #subtitle: 'Curso',
+  xtitle: 'Periodo',
+  ytitle: 'Blox',
+  width: 1200,
+  theme: 'palette8',
+  stacked: true
+} %>
+
+<div style="display: inline-block; width: 48%;">
+<p> Quantidade de blox no 2.CICLO: 
+                          <%= select_tag(:cycle_id, 
+                          raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
+                          %>
+</p>
+<%= column_chart(range_bar_ciclo2, {**options2, }) %>
 </div>
 
 <%# Trecho do Grafico um com dados mocados manualmente %>
