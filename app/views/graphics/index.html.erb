@@ -34,7 +34,7 @@
 <% range_bar_ciclo1 = [{
       name: "Matutino",
       data:  { 
-        "Administração" => ["#{@administracao1.count}"],
+        "Administração1" => ["#{@administracao1.count}"],
         'Finanças' => ["#{@financas1.count}"],
         'Contabilidade' => ["#{@contabilidade1.count}"],
         'Informática' => ["#{@informatica1.count}"],
@@ -52,7 +52,7 @@
     }, {
       name: "Diurno",
       data: {
-        "Administração" => ["#{@administracao2.count}"],
+        "Administração1" => ["#{@administracao2.count}"],
         'Finanças' => ["#{@financas2.count}"],
         'Contabilidade' => ["#{@contabilidade2.count}"],
         'Informática' => ["#{@informatica2.count}"],
@@ -70,6 +70,13 @@
   }]
 %>
 
+<p> Quantidade de blox: 
+    <select id="test", onchange="showDiv()">
+    <option value="0">1.Ciclo</option>
+    <option value="1">2.Ciclo</option>
+    </select>
+</p>
+
 <% options1 = {
   #title: 'Quantidade de blox por: ',
   #subtitle: 'Curso',
@@ -80,21 +87,31 @@
   stacked: true
 } %>
 
-<div style="display: inline-block; width: 48%;">
-<p> Quantidade de blox no 1.CICLO: 
-                          <%= select_tag(:cycle_id, 
-                          raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
-                          %>
-</p>
+<div id="hidden_div1", style="display: inline-block; width: 48%; display: block;">
+<%# <p> Quantidade de blox no 1.CICLO: 
+  <%= select_tag(:cycle_id, 
+  raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
+  %>
+<%# </p> %>
 <%= column_chart(range_bar_ciclo1, {**options1, }) %>
 </div>
 
-<br>
+<script>
+    function showDiv(){
+        getSelectValue = document.getElementById("test").value;
+        if(getSelectValue == "1"){
+            document.getElementById("hidden_div1").style.display="none";
+        }else{
+            document.getElementById("hidden_div1").style.display="block";
+        }
+    }
+</script>
+
 
 <% range_bar_ciclo2 = [{
       name: "Matutino",
       data:  { 
-        "Administração" => ["#{@administracao3.count}"],
+        "Administração2" => ["#{@administracao3.count}"],
         'Finanças' => ["#{@financas3.count}"],
         'Contabilidade' => ["#{@contabilidade3.count}"],
         'Informática' => ["#{@informatica3.count}"],
@@ -112,7 +129,7 @@
     }, {
       name: "Diurno",
       data: {
-        "Administração" => ["#{@administracao4.count}"],
+        "Administração2" => ["#{@administracao4.count}"],
         'Finanças' => ["#{@financas4.count}"],
         'Contabilidade' => ["#{@contabilidade4.count}"],
         'Informática' => ["#{@informatica4.count}"],
@@ -140,73 +157,11 @@
   stacked: true
 } %>
 
-<div style="display: inline-block; width: 48%;">
-<p> Quantidade de blox no 2.CICLO: 
+<div id="hidden_div2", style="display: inline-block; width: 48%; display: block;">
+<%# <p> Quantidade de blox no 2.CICLO: 
                           <%= select_tag(:cycle_id, 
                           raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
-                          %>
-</p>
+                          %> 
+<%# </p> %>
 <%= column_chart(range_bar_ciclo2, {**options2, }) %>
 </div>
-
-<%# Trecho do Grafico um com dados mocados manualmente %>
-<%# <% range_bar_series = [{
-      name: "Matutino",
-      data: {
-        'Administração' => [485],
-        'Finanças' => [390],
-        'Contabilidade' => [625],
-        'Informática' => [350],
-        'Banco de dados' => [485],
-        'Filosofia' => [390],
-        'Geografia' => [625],
-        'Direito' => [485],
-        'Pedagogia' => [325],
-        'Emfermagem' => [225],
-        'Pedagogia' => [125],
-        'Engenharia Civil' => [374],
-        'Educação Física' => [278],
-        'Arquitetura e Urbanismo' => [625],
-        'Hotelaria' => [350]
-      }
-    }, {
-      name: "Diurno",
-      data: {
-        'Administração' => [600],
-        'Finanças' => [150],
-        'Contabilidade' => [80],
-        'Informática' => [175],
-        'Banco de dados' => [485],
-        'Filosofias' => [390],
-        'Geografia' => [625],
-        'Direito' => [485],
-        'Pedagogia' => [625],
-        'Emfermagem' => [625],
-        'Pedagogia' => [625],
-        'Engenharia Civil' => [625],
-        'Educação Física' => [625],
-        'Arquitetura e Urbanismo' => [625],
-        'Hotelaria' => [350]
-      }
-  }]
-%>
-
-<%# <% options = {
-  #title: 'Quantidade de blox por: ',
-  #subtitle: 'Período',
-  #xtitle: 'Curso',
-  #ytitle: 'Blox',
-  width: 1200,
-  theme: 'palette8',
-  stacked: true
-} 
-
-<div style="display: inline-block; width: 48%;">
-<p> Quantidade de blox por: 
-                          <%= select_tag(:cycle_id, 
-                          raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
-                          %>
-<%# </p>
-<%= column_chart(range_bar_series, {**options, }) %>
-<%# </div> %>
-
