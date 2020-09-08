@@ -32,7 +32,7 @@
 </div>
 
 <% range_bar_ciclo1 = [{
-      name: "Matutino",
+      name: "Matutino Ciclo1",
       data:  { 
         "Administração1" => ["#{@administracao1.count}"],
         'Finanças' => ["#{@financas1.count}"],
@@ -50,7 +50,7 @@
         'Hotelaria' => ["#{@hotelaria1.count}"]
       }
     }, {
-      name: "Diurno",
+      name: "Diurno Ciclo1",
       data: {
         "Administração1" => ["#{@administracao2.count}"],
         'Finanças' => ["#{@financas2.count}"],
@@ -70,46 +70,8 @@
   }]
 %>
 
-<p> Quantidade de blox: 
-    <select id="test", onchange="showDiv()">
-    <option value="0">1.Ciclo</option>
-    <option value="1">2.Ciclo</option>
-    </select>
-</p>
-
-<% options1 = {
-  #title: 'Quantidade de blox por: ',
-  #subtitle: 'Curso',
-  xtitle: 'Periodo',
-  ytitle: 'Blox',
-  width: 1200,
-  theme: 'palette8',
-  stacked: true
-} %>
-
-<div id="hidden_div1", style="display: inline-block; width: 48%; display: block;">
-<%# <p> Quantidade de blox no 1.CICLO: 
-  <%= select_tag(:cycle_id, 
-  raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
-  %>
-<%# </p> %>
-<%= column_chart(range_bar_ciclo1, {**options1, }) %>
-</div>
-
-<script>
-    function showDiv(){
-        getSelectValue = document.getElementById("test").value;
-        if(getSelectValue == "1"){
-            document.getElementById("hidden_div1").style.display="none";
-        }else{
-            document.getElementById("hidden_div1").style.display="block";
-        }
-    }
-</script>
-
-
 <% range_bar_ciclo2 = [{
-      name: "Matutino",
+      name: "Matutino Ciclo 2",
       data:  { 
         "Administração2" => ["#{@administracao3.count}"],
         'Finanças' => ["#{@financas3.count}"],
@@ -127,7 +89,7 @@
         'Hotelaria' => ["#{@hotelaria3.count}"]
       }
     }, {
-      name: "Diurno",
+      name: "Diurno Ciclo 2",
       data: {
         "Administração2" => ["#{@administracao4.count}"],
         'Finanças' => ["#{@financas4.count}"],
@@ -147,7 +109,7 @@
   }]
 %>
 
-<% options2 = {
+<% options = {
   #title: 'Quantidade de blox por: ',
   #subtitle: 'Curso',
   xtitle: 'Periodo',
@@ -157,11 +119,35 @@
   stacked: true
 } %>
 
-<div id="hidden_div2", style="display: inline-block; width: 48%; display: block;">
-<%# <p> Quantidade de blox no 2.CICLO: 
-                          <%= select_tag(:cycle_id, 
-                          raw('<option value="1">1.Ciclo</option><option value="2">2.Ciclo</option>')) 
-                          %> 
-<%# </p> %>
-<%= column_chart(range_bar_ciclo2, {**options2, }) %>
+<p> Quantidade de blox: 
+    <select id="selectCiclo", onchange="showDiv()">
+    <option value="1">1.Ciclo</option>
+    <option value="2">2.Ciclo</option>
+    </select>
+</p>
+
+
+<div id="ciclo1", style="display: inline-block; width: 48%; display: block;">
+<p> Dados do CICLO 1 </p> 
+<%= column_chart(range_bar_ciclo1, {**options, }) %>
 </div>
+
+<div id="ciclo2", style="display: inline-block; width: 48%; display: none;">
+<p> Dados do CICLO 2 </p> 
+<%= column_chart(range_bar_ciclo2, {**options, }) %>
+</div>
+
+<script>
+    function showDiv(){
+        getSelectValue = document.getElementById("selectCiclo").value;
+        if(getSelectValue == "1"){
+            document.getElementById("ciclo1").style.display="block";
+            document.getElementById("ciclo2").style.display="none";
+        }if(getSelectValue == "2"){
+            document.getElementById("ciclo1").style.display="none";
+            document.getElementById("ciclo2").style.display="block";
+        }
+    }
+</script>
+
+
