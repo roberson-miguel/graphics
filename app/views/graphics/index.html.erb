@@ -119,11 +119,11 @@
   stacked: true
 } %>
 
+
+
 <p> Quantidade de blox: 
-    <select id="selectCiclo", onchange="showDiv()">
-    <option value="1">1.Ciclo</option>
-    <option value="2">2.Ciclo</option>
-    </select>
+ <%= select_tag 'Ciclo', options_for_select(@cycles.collect{ |u| [u.name, u.id] }), 
+                                            id:"selectCiclo", onchange: "showDiv()" %>
 </p>
 
 

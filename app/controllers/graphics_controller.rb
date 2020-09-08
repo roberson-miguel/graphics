@@ -4,6 +4,7 @@ class GraphicsController < ApplicationController
     @cycles = Cycle.all
     @shifts = Shift.all
     @courses = Course.all
+    @course = Course.new
 
     @func_tecnico = Course.where("functional_area_id = 1").count
     @func_quantitativo = Course.where("functional_area_id = 2").count
